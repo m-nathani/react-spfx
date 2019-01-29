@@ -1,0 +1,53 @@
+{
+  "name": "engro-react-spfx",
+  "version": "0.0.1",
+  "private": true,
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "build": "gulp bundle",
+    "build-ship": "gulp bundle --ship",
+    "package-ship": "gulp package-solution --ship",
+    "clean": "gulp clean",
+    "test": "gulp test",
+    "start": "cross-env NODE_NO_HTTP2=1 gulp serve"
+  },
+  "dependencies": {
+    "@microsoft/sp-core-library": "~1.1.0",
+    "@microsoft/sp-lodash-subset": "~1.1.0",
+    "@microsoft/sp-office-ui-fabric-core": "~1.4.0-0",
+    "@microsoft/sp-webpart-base": "~1.1.0",
+    "antd": "2.13.14",
+    "axios": "^0.18.0",
+    "prop-types": "^15.6.2",
+    "react": "15.4.2",
+    "react-dom": "15.4.2",
+    "react-table": "^6.8.6"
+  },
+  "resolutions": {
+    "@types/react": "0.14.46"
+  },
+  "devDependencies": {
+    "@microsoft/sp-build-web": "~1.1.0",
+    "@microsoft/sp-module-interfaces": "~1.1.0",
+    "@microsoft/sp-webpart-workbench": "~1.1.0",
+    "@types/axios": "^0.14.0",
+    "@types/chai": "3.4.34",
+    "@types/es6-promise": "0.0.33",
+    "@types/mocha": "2.2.38",
+    "@types/prop-types": "^15.5.8",
+    "@types/react": "0.14.46",
+    "@types/react-addons-shallow-compare": "0.14.17",
+    "@types/react-addons-test-utils": "0.14.15",
+    "@types/react-addons-update": "0.14.14",
+    "@types/react-dom": "0.14.18",
+    "@types/react-table": "^6.7.21",
+    "@types/webpack-env": "1.13.1",
+    "ajv": "~5.2.2",
+    "cross-env": "^5.2.0",
+    "gulp": "~3.9.1",
+    "typescript": "2.9.2",
+    "typescript-tslint-plugin": "^0.3.0"
+  }
+}

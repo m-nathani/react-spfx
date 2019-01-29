@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "entry": "./lib/webparts/dashboard/DashboardWebPart.js",
+      "manifest": "./src/webparts/dashboard/DashboardWebPart.manifest.json",
+      "outputPath": "./dist/dashboard-web-part.js"
+    }
+  ],
+  "externals": {},
+  "localizedResources": {
+    "DashboardWebPartStrings": "webparts/dashboard/loc/{locale}.js"
+  }
+}
