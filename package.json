@@ -23,7 +23,8 @@
     "prop-types": "^15.6.2",
     "react": "15.4.2",
     "react-dom": "15.4.2",
-    "react-table": "^6.8.6"
+    "react-table": "^6.8.6",
+    "store2": "^2.7.1"
   },
   "resolutions": {
     "@types/react": "0.14.46"

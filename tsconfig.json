@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "es5",
     "forceConsistentCasingInFileNames": true,
-    "module": "esnext",
+    "module": "commonjs",
     "jsx": "react",
     "allowSyntheticDefaultImports": true,
     "declaration": true,

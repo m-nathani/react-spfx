@@ -1,13 +1,13 @@
 import HttpRequest from './HttpRequest';
 
 export default class MessageProvider extends HttpRequest {
-  public path: string = '';
+  private path: string = '';
 
   constructor(path: string) {
     super();
     this.path = path;
   }
-  private sendMessage(data: any) {
+  public sendMessage(data: any) {
     return this.create(`${this.path}/send-message`, data);
   }
 }
