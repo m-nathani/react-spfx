@@ -1,5 +1,5 @@
 {
-  "extends": ["@microsoft/sp-tslint-rules"],
+  "extends": ["tslint-microsoft-contrib","@microsoft/sp-tslint-rules"],
   "rules": {
     "class-name": false,
     "export-name": false,
@@ -8,7 +8,6 @@
     "label-position": false,
     "member-access": true,
     "no-arg": false,
-    "no-console": false,
     "no-construct": false,
     "no-duplicate-variable": true,
     "no-eval": false,
@@ -21,11 +20,74 @@
     "no-use-before-declare": true,
     "no-with-statement": true,
     "semicolon": true,
-    "trailing-comma": false,
     "typedef": false,
     "typedef-whitespace": false,
     "use-named-parameter": true,
     "variable-name": false,
-    "whitespace": false
+    "whitespace": false,
+    "missing-jsdoc": false,
+    "ordered-imports": false,
+    "no-relative-imports": false,
+    "import-name": false,
+    "max-func-body-length": 0,
+    "react-tsx-curly-spacing": false,
+    "no-default-export": false,
+    "no-empty-interface": false,
+    "no-any": false,
+    "comment-format": [true, "check-space"],
+    "curly": true,
+    "eofline": false,
+    "indent": [true, "spaces", 2],
+    "interface-name": true,
+    "max-line-length": [true, 120],
+    "member-ordering": [
+      true,
+      "public-before-private",
+      "static-before-instance",
+      "variables-before-functions"
+    ],
+    "missing-optional-annotation": true,
+    "no-bitwise": true,
+    "no-consecutive-blank-lines": true,
+    "no-console": [
+      true,
+      "debug",
+      "info",
+      "time",
+      "timeEnd",
+      "trace"
+    ],
+    "no-constant-condition": true,
+    "no-debugger": true,
+    "no-duplicate-case": true,
+    "no-duplicate-parameter-names": true,
+    "no-empty": true,
+    "no-inferrable-types": false,
+    "no-null-keyword": true,
+    "no-string-literal": true,
+    "no-trailing-whitespace": true,
+    "no-unused-imports": true,
+    "no-var-keyword": true,
+    "object-literal-sort-keys": false,
+    "one-line": [
+      true,
+      "check-open-brace",
+      "check-catch",
+      "check-else",
+      "check-whitespace"
+    ],
+    "quotemark": [true, "single", "avoid-escape"],
+    "prefer-const": true,
+    "radix": true,
+    "trailing-comma": [
+      true,
+      {
+        "multiline": "always",
+        "singleline": "never"
+      }
+    ],
+    "triple-equals": [true, "allow-null-check"],
+    "use-isnan": true,
+    "valid-typeof": true
   }
 }

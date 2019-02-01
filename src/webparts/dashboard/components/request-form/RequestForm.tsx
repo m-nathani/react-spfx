@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Form, Icon } from 'antd';
-import  FormItem from 'antd/lib/form/FormItem';
-import { IRequestForm } from './IRequestFormProps';
+import FormItem from 'antd/lib/form/FormItem';
+import { IRequestForm } from './IRequestForm';
 import {
   EButton,
   EDatePicker,
@@ -14,7 +14,7 @@ import {
   ESelect,
   EButtonDropdown,
   dropDownMenu,
-  dropDownButtonMenu
+  dropDownButtonMenu,
 } from '../../../../components';
 import styles from './RequestForm.module.scss';
 import { escape } from '@microsoft/sp-lodash-subset';
@@ -22,8 +22,8 @@ import { validation, config } from '../../../../services';
 const EFormItem: typeof FormItem = Form.Item;
 
 class RequestForm extends React.Component<IRequestForm, {}> {
-  constructor(...args: any) {
-    super(args);
+  constructor(props: IRequestForm) {
+    super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -43,22 +43,22 @@ class RequestForm extends React.Component<IRequestForm, {}> {
       { key: '5', value: 'one', disabled: false },
       { key: '6', value: 'one', disabled: false },
       { key: '7', value: 'one', disabled: true },
-      { key: '8', value: 'one', disabled: false }
+      { key: '8', value: 'one', disabled: false },
     ];
 
     const { getFieldDecorator } = this.props.form;
     const formItemLayout = {
       labelCol: {
         xs: { span: 24 },
-        sm: { span: 8 }
+        sm: { span: 8 },
       },
       wrapperCol: {
         xs: { span: 24 },
-        sm: { span: 16 }
-      }
+        sm: { span: 16 },
+      },
     };
     return (
-      <div className={styles.requestForm}>
+      <div className={ styles.requestForm }>
         <div className={styles.container}>
           <div className={styles.row}>
             <div className={styles.column}>
@@ -73,7 +73,7 @@ class RequestForm extends React.Component<IRequestForm, {}> {
                       isButtonDropdown={false}
                       label={'anchor hover dropdown'}
                       overlay={dropDownMenu(items)}
-                    />
+                    />,
                   )}
                 </EFormItem>
                 <EFormItem {...formItemLayout} label='ButtonHoverDropdown'>
@@ -82,7 +82,7 @@ class RequestForm extends React.Component<IRequestForm, {}> {
                       isButtonDropdown={true}
                       label={'button hover dropdown'}
                       overlay={dropDownMenu(items)}
-                    />
+                    />,
                   )}
                 </EFormItem>
                 <EFormItem {...formItemLayout} label='ButtonDropdown'>
@@ -90,17 +90,17 @@ class RequestForm extends React.Component<IRequestForm, {}> {
                     <EButtonDropdown
                       label={'button dropdown'}
                       overlay={dropDownButtonMenu(items)}
-                    />
+                    />,
                   )}
                 </EFormItem>
                 <EFormItem {...formItemLayout} label='DatePicker'>
                   {getFieldDecorator('date-picker', config.datePicker)(
-                    <EDatePicker format='MM/DD/YYYY' />
+                    <EDatePicker format='MM/DD/YYYY' />,
                   )}
                 </EFormItem>
                 <EFormItem {...formItemLayout} label='DatePicker[showTime]'>
                   {getFieldDecorator('date-time-picker', config.datePicker)(
-                    <EDatePicker showTime format='YYYY-MM-DD HH:mm:ss' />
+                    <EDatePicker showTime format='YYYY-MM-DD HH:mm:ss' />,
                   )}
                 </EFormItem>
                 <EFormItem {...formItemLayout} label='Checkbox'>
@@ -108,7 +108,7 @@ class RequestForm extends React.Component<IRequestForm, {}> {
                     <ECheckbox
                       name='mycheckbox'
                       label='this is checkbox label'
-                    />
+                    />,
                   )}
                 </EFormItem>
                 <EFormItem {...formItemLayout} label='InputText'>
@@ -120,7 +120,7 @@ class RequestForm extends React.Component<IRequestForm, {}> {
                       prefix={<Icon type='lock' style={{ fontSize: 13 }} />}
                       type='password'
                       placeholder='Password'
-                    />
+                    />,
                   )}
                 </EFormItem>
                 <EFormItem {...formItemLayout} label='DefaultSelect'>
@@ -131,7 +131,7 @@ class RequestForm extends React.Component<IRequestForm, {}> {
                       mode='default'
                       style={{ width: 120 }}
                       options={items}
-                    />
+                    />,
                   )}
                 </EFormItem>
                 <EFormItem {...formItemLayout} label='ComboboxSelect'>
@@ -142,7 +142,7 @@ class RequestForm extends React.Component<IRequestForm, {}> {
                       mode='combobox'
                       style={{ width: 120 }}
                       options={items}
-                    />
+                    />,
                   )}
                 </EFormItem>
                 <EFormItem {...formItemLayout} label='MultipleSelect'>
@@ -153,27 +153,27 @@ class RequestForm extends React.Component<IRequestForm, {}> {
                       mode='multiple'
                       style={{ width: 120 }}
                       options={items}
-                    />
+                    />,
                   )}
                 </EFormItem>
                 <EFormItem {...formItemLayout} label='RangePicker'>
                   {getFieldDecorator('range-picker', config.range)(
-                    <ERangePicker />
+                    <ERangePicker />,
                   )}
                 </EFormItem>
                 <EFormItem {...formItemLayout} label='RangePicker[showTime]'>
                   {getFieldDecorator('range-time-picker', config.range)(
-                    <ERangePicker showTime format='YYYY-MM-DD HH:mm:ss' />
+                    <ERangePicker showTime format='YYYY-MM-DD HH:mm:ss' />,
                   )}
                 </EFormItem>
                 <EFormItem {...formItemLayout} label='TimePicker'>
                   {getFieldDecorator('time-picker', config.timePicker)(
-                    <ETimePicker />
+                    <ETimePicker />,
                   )}
                 </EFormItem>
                 <EFormItem {...formItemLayout} label='InputNumber'>
                   {getFieldDecorator('input-number', config.number)(
-                    <EInputNumber />
+                    <EInputNumber />,
                   )}
                 </EFormItem>
                 <EFormItem {...formItemLayout} label='E-mail' hasFeedback>
@@ -182,7 +182,7 @@ class RequestForm extends React.Component<IRequestForm, {}> {
                 <EFormItem
                   wrapperCol={{
                     xs: { span: 24, offset: 0 },
-                    sm: { span: 16, offset: 8 }
+                    sm: { span: 16, offset: 8 },
                   }}
                 >
                   <EButton

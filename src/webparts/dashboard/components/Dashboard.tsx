@@ -1,15 +1,14 @@
 import * as React from 'react';
 import { escape } from '@microsoft/sp-lodash-subset';
-import { LocaleProvider } from 'antd';
-import enUS from 'antd/lib/locale-provider/en_US';
 
 import { WrappedRequestFormForm } from './request-form/RequestForm';
 
 import styles from './Dashboard.module.scss';
 import { IDashboardProps } from './IDashboardProps';
-import DefaultDataGrid from '../../../components/data-grid/DefaultDataGrid';
+import DataGrid from '../../../components/data-grid';
+import RootHOC from '../../../components/root-hoc/Root';
 
-export default class Dashboard extends React.Component<IDashboardProps, {}> {
+class Dashboard extends React.Component<IDashboardProps, {}> {
   public render(): React.ReactElement<IDashboardProps> {
     return (
       <div>
@@ -28,36 +27,11 @@ export default class Dashboard extends React.Component<IDashboardProps, {}> {
             </div>
           </div>
         </div>
-        <LocaleProvider locale={enUS}>
-          <WrappedRequestFormForm description='Hi, this is my first component' />
-        </LocaleProvider>
-        <DefaultDataGrid
-          defaultPageSize={5}
-          data={[
-            { name: "murtaza", lastname: "nathani" },
-            { name: "murtaza", lastname: "nathani" },
-            { name: "murtaza", lastname: "nathani" },
-            { name: "murtaza", lastname: "nathani" },
-            { name: "murtaza", lastname: "nathani" },
-            { name: "murtaza", lastname: "nathani" }
-          ]}
-          columns={[
-            {
-              Header: "Name",
-              columns: [
-                {
-                  Header: "First Name",
-                  accessor: "name"
-                },
-                {
-                  Header: "Last Name",
-                  id: "lastname",
-                  accessor: "lastname"
-                }
-              ]
-            }
-          ]}/>
+        <WrappedRequestFormForm description='Hi, this is my first component' />
+        <DataGrid data={[]} columns={[]}/>
       </div>
     );
   }
 }
+
+export default RootHOC(Dashboard);

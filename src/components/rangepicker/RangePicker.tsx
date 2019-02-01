@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { IERangePickerProps } from './IRangePickerProps';
+import { IERangePickerProps } from './IRangePicker';
 import { DatePicker } from 'antd';
 const { RangePicker } = DatePicker;
 
 export class ERangePicker extends React.Component<IERangePickerProps, any> {
-  constructor(...args: any) {
-    super(...args);
+  constructor(props: IERangePickerProps) {
+    super(props);
   }
 
   public render(): JSX.Element {

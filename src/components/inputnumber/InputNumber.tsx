@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { IEInputNumberProps } from './IInputNumberProps';
+import { IEInputNumberProps } from './IInputNumber';
 import { InputNumber } from 'antd';
 
 export class EInputNumber extends React.Component<IEInputNumberProps, any> {
-  constructor(...args: any) {
-    super(...args);
+  constructor(props: IEInputNumberProps) {
+    super(props);
   }
 
   public render(): JSX.Element {

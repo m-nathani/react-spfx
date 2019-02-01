@@ -5,24 +5,24 @@ export default class Storage {
   private defaultStorage: StoreAPI = store.local;
   private storage: StoreAPI;
 
-  constructor(type?: 'local' | 'session') {
-    this.storage = type ? store[type] : this.defaultStorage;
+  constructor(storageType?: 'local' | 'session') {
+    this.storage = storageType ? store[storageType] : this.defaultStorage;
   }
 
-  public get(key: string) {
-    return this.storage.get(key);
+  public getKey(key: string): void {
+    this.storage.get(key);
   }
 
-  public set(key: string, data: any) {
-    return this.storage.set(key, data);
+  public setKey(key: string, data: any): void  {
+    this.storage.set(key, data);
   }
 
-  public remove(key: string) {
-    return this.storage.remove(key);
+  public remove(key: string): void  {
+    this.storage.remove(key);
   }
 
-  public clearAll() {
-    return this.storage.clearAll();
+  public clearAll(): void  {
+    this.storage.clearAll();
   }
 
 }

@@ -1,16 +1,16 @@
 import * as React from 'react';
-import { IESelectProps } from './ISelectProps';
+import { IESelectProps } from './ISelect';
 import { Select } from 'antd';
 import { OptionProps } from 'antd/lib/select';
 
 export class ESelect extends React.Component<IESelectProps, any> {
-  constructor(...args: any) {
-    super(...args);
+  constructor(props: IESelectProps) {
+    super(props);
   }
 
   public items(): JSX.Element {
     const Option: React.ClassicComponentClass<OptionProps> = Select.Option;
-    const options = this.props
+    return this.props
       .options.map(
         (option: any) => {
           return (
@@ -18,10 +18,8 @@ export class ESelect extends React.Component<IESelectProps, any> {
               {option.value}
             </Option>
           );
-        }
+        },
       );
-
-    return options;
   }
 
   public render(): JSX.Element {

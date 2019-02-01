@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { IUnauthorizedProps } from './IUnauthorizedProps';
+import { IUnauthorizedProps } from './IUnauthorized';
 
 export default class Unauthorized extends React.PureComponent<IUnauthorizedProps, {}> {
   public render(): React.ReactElement<IUnauthorizedProps> {

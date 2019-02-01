@@ -4,7 +4,7 @@ import { Version } from '@microsoft/sp-core-library';
 import {
   BaseClientSideWebPart,
   IPropertyPaneConfiguration,
-  PropertyPaneTextField
+  PropertyPaneTextField,
 } from '@microsoft/sp-webpart-base';
 
 import * as strings from 'DashboardWebPartStrings';
@@ -22,8 +22,8 @@ export default class DashboardWebPart extends BaseClientSideWebPart<
     const element: React.ReactElement<IDashboardProps> = React.createElement(
       Dashboard,
       {
-        description: this.properties.description
-      }
+        description: this.properties.description,
+      },
     );
 
     ReactDom.render(element, this.domElement);
@@ -42,20 +42,20 @@ export default class DashboardWebPart extends BaseClientSideWebPart<
       pages: [
         {
           header: {
-            description: strings.PropertyPaneDescription
+            description: strings.PropertyPaneDescription,
           },
           groups: [
             {
               groupName: strings.BasicGroupName,
               groupFields: [
                 PropertyPaneTextField('description', {
-                  label: strings.DescriptionFieldLabel
-                })
-              ]
-            }
-          ]
-        }
-      ]
+                  label: strings.DescriptionFieldLabel,
+                }),
+              ],
+            },
+          ],
+        },
+      ],
     };
   }
 }

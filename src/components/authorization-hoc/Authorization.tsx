@@ -4,7 +4,7 @@ import { IAuthorizationProps, IAuthorizationState } from './IAuthorization';
 import Unauthorized from '../unauthorized/Unauthorized';
 import { auth } from '../../services';
 
-const withAuthorization = <P extends object>(Component: any) =>
+const withAuthorization = <P extends object>(Component: React.ComponentClass<any>) =>
   class withAuthorization extends React.Component<P & IAuthorizationProps, IAuthorizationState> {
     public readonly state: IAuthorizationState = {
       isAuthorized: false,
@@ -28,7 +28,7 @@ const withAuthorization = <P extends object>(Component: any) =>
     public render(): React.ReactElement<P & IAuthorizationProps> {
       const { ...props } = this.props as IAuthorizationProps;
       const { isAuthorized } = this.state;
-      return isAuthorized ? <Unauthorized /> : <Component {...props} />;
+      return isAuthorized ? <Component {...props} /> : <Unauthorized />;
     }
   };
 

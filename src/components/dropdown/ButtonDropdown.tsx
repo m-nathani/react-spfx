@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { IEButtonDropdownProps } from './IButtonDropdownProps';
+import { IEButtonDropdownProps } from './IButtonDropdown';
 import { Menu, Dropdown } from 'antd';
 
 export function dropDownButtonMenu(items: any): JSX.Element {
@@ -14,11 +14,11 @@ export function dropDownButtonMenu(items: any): JSX.Element {
       }
     </Menu>
     );
-};
+}
 
 export class EButtonDropdown extends React.Component<IEButtonDropdownProps, any> {
-  constructor(...args: any) {
-    super(...args);
+  constructor(props: IEButtonDropdownProps) {
+    super(props);
   }
 
   public render(): JSX.Element {
