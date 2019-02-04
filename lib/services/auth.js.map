@@ -1,1 +1,0 @@
-{"version":3,"sources":["services/auth.ts"],"names":[],"mappings":";;AAAA,qCAAoC;AAEpC;IACE,OAAO,iBAAO,CAAC,GAAG,CAAC,SAAS,CAAC,CAAC;AAChC,CAAC;AAFD,kDAEC","file":"services/auth.js","sourcesContent":["import { storage } from './storage';\n\nexport function isAlreadyAuthorized() {\n  return storage.get('someKey');\n}\n"],"sourceRoot":"../../src"}

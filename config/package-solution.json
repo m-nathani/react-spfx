@@ -1,11 +1,11 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
-    "name": "engro-react-spfx-client-side-solution",
+    "name": "react-spfx-client-side-solution",
     "id": "6b81f489-5869-4899-8726-69d573dec0a1",
     "version": "1.0.0.0"
   },
   "paths": {
-    "zippedPackage": "solution/engro-react-spfx.sppkg"
+    "zippedPackage": "solution/react-spfx.sppkg"
   }
 }
